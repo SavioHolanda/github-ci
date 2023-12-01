@@ -2,13 +2,7 @@ name: Consulta Token
 
 on:
   schedule: # execute every 12 hours
-    - cron: "0 8,15,16,17,18 * * 1-5"
-    
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  
+    - cron: "* */12 * * *"
   workflow_dispatch:
 
 jobs:
