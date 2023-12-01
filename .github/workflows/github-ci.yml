@@ -54,7 +54,7 @@ jobs:
 
       - name: Configurar Chave SSH
         run: |
-          mkdir -p ~/.ssh
+          mkdir -p C:\Users\Savio/.ssh
           echo "$SSH_PRIVATE_KEY" > C:\Users\Savio/.ssh/id_rsa
           chmod 600 C:\Users\Savio/.ssh/id_rsa
         env:
