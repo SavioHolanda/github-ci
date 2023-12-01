@@ -47,18 +47,3 @@ jobs:
         with:
             name: report
             path: ./results/Report.html
-
-  send-email:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Send email
-        uses: dawidd6/action-send-mail@v2
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: savioborges2012@gmail.com
-          password: $4vio@10
-          subject: 'Resultado dos Testes'
-          to: 'savioborges2012@gmail.com'
-          from: 'savioborges2012@gmail.com'
-          body: 'Os testes foram concluídos. Verifique os resultados.'
