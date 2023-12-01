@@ -52,6 +52,12 @@ jobs:
             name: report
             path: ./results/Report.html
 
+      # Configurar o agente SSH
+      - name: Configurar agente SSH
+        uses: webfactory/ssh-agent@v0.5.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       # Enviar Email
       - name: Enviar e-mail com resultado
         uses: mxschmitt/action-tmate@master
