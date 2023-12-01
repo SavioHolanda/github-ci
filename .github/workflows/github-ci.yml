@@ -6,7 +6,7 @@ name: Consulta Token
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
-    - cron: '0 8,14 * * *' # Executar às 8h da manhã e às 18h da noite
+    - cron: '0 8,15,16,17,18 * * 1-5' # Executar às 8h da manhã e às 18h da noite
   push:
     branches: [ main ]
   pull_request:
