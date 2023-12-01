@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "8e06cb18-08c7-43bc-838a-27d74803d891",
+		"name": "AutomacaoToken",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15568941",
+		"_collection_link": "https://nhgtech.postman.co/workspace/NHG-TECH~c5fa604c-375e-4ac5-81e0-3024cb8b21ed/collection/15568941-8e06cb18-08c7-43bc-838a-27d74803d891?action=share&source=collection_link&creator=15568941"
+	},
+	"item": [
+		{
+			"name": "RetornoDoToken",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "02971008312",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Fale1234@",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
