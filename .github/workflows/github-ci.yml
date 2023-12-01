@@ -54,8 +54,12 @@ jobs:
 
       # Configurar o agente SSH
       - name: Configurar agente SSH
-        uses: webfactory/ssh-agent@v0.5.1
-        with:
+        run: 
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
+        env:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       # Enviar Email
