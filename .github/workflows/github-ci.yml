@@ -54,7 +54,7 @@ jobs:
 
       # Enviar Email
       - name: Enviar e-mail com resultado
-        uses: mxschmitt/action-tmate@v6
+        uses: mxschmitt/action-tmate@master
         with:
           session-name: email-session
           command: |
