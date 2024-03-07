@@ -1,31 +1,31 @@
-name: Consulta Token
+# name: Consulta Token
 
-on:
-  schedule: # execute every 6 hours
-    - cron: "* */6 * * *"
-  workflow_dispatch:
+# on:
+#   schedule: # execute every 6 hours
+#     - cron: "* */6 * * *"
+#   workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
     
-    steps:
+#     steps:
 
-      - uses: actions/checkout@v2
+#       - uses: actions/checkout@v2
 
-      - name: Step 1 Check version Newman and Node
-        run: |
-          newman --version
-          node --version
+#       - name: Step 1 Check version Newman and Node
+#         run: |
+#           newman --version
+#           node --version
           
-      - name: Step 2 Install Newman-Reporter-Htmlextra
-        run: sudo npm install -g newman-reporter-htmlextra
+#       - name: Step 2 Install Newman-Reporter-Htmlextra
+#         run: sudo npm install -g newman-reporter-htmlextra
         
-      - name: Step 3 Execute collection
-        run: newman run ./AutomacaoToken-ci.json -e ./retornoToken-env.json --reporters cli, -r htmlextra --reporter-htmlextra-export ./results/Report.html
+#       - name: Step 3 Execute collection
+#         run: newman run ./AutomacaoToken-ci.json -e ./retornoToken-env.json --reporters cli, -r htmlextra --reporter-htmlextra-export ./results/Report.html
    
-      - name: Step 4 Archive production artifacts
-        uses: actions/upload-artifact@v2
-        with:
-            name: report
-            path: ./results/Report.html
+#       - name: Step 4 Archive production artifacts
+#         uses: actions/upload-artifact@v2
+#         with:
+#             name: report
+#             path: ./results/Report.html
